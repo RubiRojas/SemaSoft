@@ -1,8 +1,9 @@
 
-package clima;
+package Paquete;
 
 import com.sun.awt.AWTUtilities;
 import javax.swing.ImageIcon;
+import Paquete.Clima;
 
 
 public final class FrmClima extends javax.swing.JFrame {
@@ -49,7 +50,7 @@ public final class FrmClima extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 190, 40));
 
         BtnSalir.setBackground(new java.awt.Color(51, 51, 255));
-        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir2.png"))); // NOI18N
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Paquete/Imagenes/salir2.png"))); // NOI18N
         BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSalirActionPerformed(evt);
@@ -68,19 +69,19 @@ public final class FrmClima extends javax.swing.JFrame {
     public void Imagen(Integer centigrados) {
 
         if (centigrados >= 28) {
-            ImageIcon clima = new ImageIcon(getClass().getResource("/Imagenes/soleado_v3.png"));
+            ImageIcon clima = new ImageIcon(getClass().getResource("/Paquete/Imagenes/soleado_v3.png"));
             this.LblImagen.setIcon(clima);
             this.LblClima.setText("28");
         } else if (centigrados >= 20 && centigrados < 28) {
-            ImageIcon clima = new ImageIcon(getClass().getResource("/Imagenes/parcialmente nublado_v3.png"));
+            ImageIcon clima = new ImageIcon(getClass().getResource("/Paquete/Imagenes/parcialmente nublado_v3.png"));
             this.LblImagen.setIcon(clima);
             this.LblClima.setText("20");
         } else if ( centigrados <= 5 && centigrados > 20) {
-            ImageIcon clima = new ImageIcon(getClass().getResource("/Imagenes/nublado_v3.png"));
+            ImageIcon clima = new ImageIcon(getClass().getResource("/Paquete/Imagenes/nublado_v3.png"));
             this.LblImagen.setIcon(clima);
             this.LblClima.setText("6");
         } else if (centigrados < 5) {
-            ImageIcon clima = new ImageIcon(getClass().getResource("/Imagenes/nublado1_v3.png"));
+            ImageIcon clima = new ImageIcon(getClass().getResource("/Paquete/Imagenes/nublado1_v3.png"));
             this.LblImagen.setIcon(clima);
             this.LblClima.setText("4");
         }

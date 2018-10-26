@@ -6,10 +6,14 @@ import java.awt.Color;
 
 public class FrmCalendario extends javax.swing.JFrame {
 
+   Control mControl;
    
     public FrmCalendario() {
         initComponents();
         this.getContentPane().setBackground(Color.BLACK);
+        mControl = new Control();
+        mControl.Suscribir();
+        mControl.Enviar_Mensaje("ENCENDER");
         
     }
 
@@ -78,6 +82,11 @@ public class FrmCalendario extends javax.swing.JFrame {
         BtnVerClima.setForeground(new java.awt.Color(255, 255, 255));
         BtnVerClima.setText("VER CLIMA");
         BtnVerClima.setActionCommand("");
+        BtnVerClima.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVerClimaActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -135,12 +144,17 @@ public class FrmCalendario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCerrarActionPerformed
+         mControl.Enviar_Mensaje("Apagar");
         System.exit(0);
     }//GEN-LAST:event_BtnCerrarActionPerformed
 
     private void BtnOcultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOcultarActionPerformed
      this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_BtnOcultarActionPerformed
+
+    private void BtnVerClimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerClimaActionPerformed
+        mControl.Enviar_Mensaje("CLIMA");
+    }//GEN-LAST:event_BtnVerClimaActionPerformed
 
    
 
